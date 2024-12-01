@@ -29,6 +29,7 @@ def _generate_fastchat(
     stop_str,
     include_stop_str_in_output,
     controller_addr,
+    use_lora,
 ) -> ConcatedLMGenResult:
 
     ret = requests.post(
@@ -51,6 +52,7 @@ def _generate_fastchat(
         "stop": stop_str,
         "echo": False,
         "include_stop_str_in_output": include_stop_str_in_output,
+        "use_lora": use_lora
     }
     response = requests.post(
         worker_addr + "/worker_generate",

@@ -13,6 +13,7 @@ class LMCallingConfig:
     stop_token_ids: Optional[List[int]] = None
     stop_str: Optional[Union[str, List[str]]] = None
     include_stop_str_in_output: bool = False
+    use_lora: bool = False
 
 
 class LanguageModelCallingFunction:
@@ -47,6 +48,7 @@ class VLLMRemoteCaller(LanguageModelCallingFunction):
             stop_str=config.stop_str,
             controller_addr=self.controller_addr,
             include_stop_str_in_output=config.include_stop_str_in_output,
+            use_lora=config.use_lora
         )
 
 
@@ -83,6 +85,7 @@ class FastChatRemoteCaller(LanguageModelCallingFunction):
                 stop_str=config.stop_str,
                 controller_addr=self.controller_addr,
                 include_stop_str_in_output=config.include_stop_str_in_output,
+                use_lora=config.use_lora
             )
             text.append(res.text[0])
             cumulative_logprob.append(res.cumulative_logprob[0])
