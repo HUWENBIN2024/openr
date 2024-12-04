@@ -1,6 +1,6 @@
 python reason/evaluation/evaluate.py \
-    --LM Qwen2.5-Math-1.5B-Instruct \
-    --RM checkpoint-2127 \
+    --LM aafeb0fc6f22cbf0eaeed126eff8be45b0360a35 \
+    --RM 45dc0a3c9ec699b645085c098ed38dc99fba4617 \
     --task_name MATH \
     --temperature 0.7 \
     --max_new_tokens 2048 \
